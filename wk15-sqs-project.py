@@ -1,8 +1,13 @@
 import boto3
 client = boto3.client('sqs')
 
-queue = client.create_queue(QueueName='The_Time')
+#Create a standard SQS queue for week 15 project
+queue = client.create_queue(
+    QueueName='Time')
 
-url = client.get_queue_url(QueueName='The_Time')
+#get queue url using queue name
+url = client.get_queue_url(
+    QueueName='Time',
+)
 
 print(url['QueueUrl'])
